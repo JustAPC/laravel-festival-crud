@@ -47,9 +47,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Band $band)
     {
-        //
+        return view('pages.show', compact('band'));
     }
 
     /**

@@ -4,9 +4,11 @@
 @section('content')
     <div class="container text-center mt-5">
         <div class="card text-bg-primary mb-3 text-center mx-auto" style="max-width: 18rem;">
-            <div class="card-header"><span class="text-primary">Nome: </span>{{ $band->name }} </div>
+            <div class="card-header">
+                <h5 class="text-primary">Nome: </h5>{{ $band->name }}
+            </div>
             <div class="card-body">
-                <h5 class="card-title"><span class="text-primary">Componenti: </span> {{ $band->components }}</h5>
+                <p class="card-title"><span class="text-primary">Componenti: </span> {{ $band->components }}</p>
                 <p class="card-text"><span class="text-primary">Genere: </span> {{ $band->genre }}</p>
                 <p class="card-text"><span class="text-primary">Data e ora:</span> {{ $band->live_on_stage }}</p>
                 <p class="card-text"><span class="text-primary">Descrizione: </span> {{ $band->bio }}</p>

@@ -85,6 +85,6 @@ class PageController extends Controller
     {
         $band->delete();
 
-        return redirect()->route( 'bands.index' );
+        return redirect()->route('bands.index', compact('band'));
     }
 }

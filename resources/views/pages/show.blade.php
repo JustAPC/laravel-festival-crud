@@ -19,7 +19,7 @@
 
         <div>
             <a href="{{ route('bands.edit', $band->id) }}" class="btn btn-warning mb-3">edit </a>
-            <form action="{{ route('bands.destroy', $band->id) }} method=" POST">
+            <form action="{{ route('bands.destroy', $band->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <input type="submit" class="btn btn-danger" value="elimina">

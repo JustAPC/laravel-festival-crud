@@ -38,6 +38,18 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'name' => 'required',
+                'components' => 'required',
+                'genre' => 'required',
+                'live_on_stage' => 'required',
+                'bio' => 'required',
+                'stage_number' => 'required',
+            ]
+        );
+
         $data = $request->all();
 
         $new_band = new Band();
@@ -64,9 +76,9 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Band $band)
     {
-        //
+        return view('pages.edit', compact('band'));
     }
 
     /**
@@ -76,9 +88,25 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Band $band)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'components' => 'required',
+                'genre' => 'required',
+                'live_on_stage' => 'required',
+                'bio' => 'required',
+                'stage_number' => 'required',
+            ]
+        );
+
+        $data = $request->all();
+
+        $band->fill($data);
+        $band->save();
+
+        return redirect()->route('bands.show', $band);
     }
 
     /**

@@ -17,7 +17,7 @@ class PageController extends Controller
     {
         $bands = Band::All();
 
-        return view('pages.home', compact('bands'));
+        return view('pages.index', compact('bands'));
     }
 
     /**

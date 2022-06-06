@@ -27,7 +27,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**

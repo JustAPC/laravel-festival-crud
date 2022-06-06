@@ -27,7 +27,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -38,7 +38,13 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $new_band = new Band();
+        $new_band->fill($data);
+        $new_band->save();
+
+        return redirect()->route('bands.show', $new_band);
     }
 
     /**
